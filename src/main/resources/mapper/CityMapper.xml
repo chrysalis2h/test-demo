@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.testdemo.dao.CityMapper">
+    <resultMap id="cityEntity" type="com.example.testdemo.api.City">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="countrycode" property="countrycode"/>
+        <result column="district" property="district"/>
+        <result column="population" property="population"/>
+    </resultMap>
 
+    <sql id="cityColumns">
+        id,
+        name,
+        countrycode,
+        district,
+        population
+    </sql>
+    <select id="getCityOverPopulation" resultType="com.example.testdemo.api.City">
+        select 
+            <include refid="cityColumns" />
+        from
+            city
+        where
+            population > #{population}
+    </select>
 </mapper>
