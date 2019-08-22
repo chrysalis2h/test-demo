@@ -1,4 +1,4 @@
-package com.example.testdemo.ThreadDemo;
+package com.example.testdemo.demo.ThreadDemo;
 
 import java.util.concurrent.locks.LockSupport;
 
@@ -10,7 +10,7 @@ public class ThreadOfPark {
      * 1、直接调用park，阻塞
      * 2、直接调用unpark，获取许可证
      * 3、调用unpark，再调用park，立即返回
-     *
+     * <p>
      * 调用park方法，被其他线程中断，不会抛出interruptedException
      */
 

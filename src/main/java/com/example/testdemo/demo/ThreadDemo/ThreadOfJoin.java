@@ -1,4 +1,4 @@
-package com.example.testdemo.ThreadDemo;
+package com.example.testdemo.demo.ThreadDemo;
 
 public class ThreadOfJoin {
 

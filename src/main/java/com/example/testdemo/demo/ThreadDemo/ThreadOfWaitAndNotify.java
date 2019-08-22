@@ -1,4 +1,4 @@
-package com.example.testdemo.ThreadDemo;
+package com.example.testdemo.demo.ThreadDemo;
 
 public class ThreadOfWaitAndNotify {
 
@@ -43,7 +43,7 @@ public class ThreadOfWaitAndNotify {
         Thread threadC = new Thread(new Runnable() {
             @Override
             public void run() {
-                synchronized (resourceA){
+                synchronized (resourceA) {
                     System.out.println("threadC begin notify");
                     resourceA.notifyAll();
                 }

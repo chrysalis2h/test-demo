@@ -43,13 +43,13 @@ public class TestDemoController {
             result.put("District", resultSet.getString("District"));
             result.put("Population", resultSet.getInt("Population"));
         }
-        if(resultSet != null){
+        if (resultSet != null) {
             resultSet.close();
         }
-        if(preparedStatement != null){
+        if (preparedStatement != null) {
             preparedStatement.close();
         }
-        if(connection != null){
+        if (connection != null) {
             connection.close();
         }
         return result;

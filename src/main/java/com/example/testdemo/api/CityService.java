@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
 
-public interface CityService extends IService<City>{
+public interface CityService extends IService<City> {
 
     IPage<City> selectPage(Page<City> page, String countryCode);
 
