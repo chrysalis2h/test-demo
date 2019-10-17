@@ -26,7 +26,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         User user = new User("insertUser", "0", "insertUser", "insertUser", "0", new Date());
         boolean insertResult = this.save(user);
         logger.info("insertUser result = {}", insertResult);
-        throw new RuntimeException();
+        return insertResult;
+//        throw new RuntimeException();
 //        return insertResult;
     }
 }

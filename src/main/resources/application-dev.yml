@@ -1,3 +1,6 @@
+server:
+  port: 8088
+
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -45,6 +48,20 @@ spring:
 #        stat:
 #          mergeSql: true
 #          slowSqlMillis: 5000
+###ThymeLeaf配置
+  thymeleaf:
+    #模板的模式，支持 HTML, XML TEXT JAVASCRIPT
+    mode: HTML5
+    #编码 可不用配置
+    encoding: UTF-8
+    #开发配置为false,避免修改模板还要重启服务器
+    cache: false
+    #配置模板路径，默认是templates，可以不用配置
+    prefix: classpath:/templates
+    #内容类别,可不用配置
+    servlet:
+      content-type: text/html
+  #thymeleaf end
 
 #########log4j(这里可以不做指定  除非自己重新命名)##########
 logging:

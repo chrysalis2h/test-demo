@@ -33,21 +33,23 @@ public class TransactionalTestServiceImpl extends ServiceImpl<CityMapper, City> 
         logger.error("同一类中，事务方法A调用非事务方法B, A RuntimeException，事务 有效");
         logger.error("同一类中，事务方法A调用非事务方法B, B RuntimeException，事务 有效");
 
-        logger.error("同一类中，非事务方法A调用事务方法B, B RuntimeException，事务 失效");
-        logger.error("同一类中，非事务方法A调用事务方法B, B RuntimeException，事务 失效");
-        logger.error("同一类中，非事务方法A调用事务方法B, B RuntimeException，事务 失效");
-        logger.error("同一类中，非事务方法A调用事务方法B, B RuntimeException，事务 失效");
-        logger.error("同一类中，非事务方法A调用事务方法B, B RuntimeException，事务 失效");
+        logger.error("不同类中，非事务方法A调用事务方法B, A RuntimeException，事务 失效");
+        logger.error("不同类中，非事务方法A调用事务方法B, B RuntimeException，事务 有效");
+
+        logger.error("同一类中，非事务方法A调用事务方法B, B RuntimeException，事务 XX");
+        logger.error("同一类中，非事务方法A调用事务方法B, B RuntimeException，事务 XX");
+        logger.error("同一类中，非事务方法A调用事务方法B, B RuntimeException，事务 XX");
+        logger.error("同一类中，非事务方法A调用事务方法B, B RuntimeException，事务 XX");
     }
 
     @Override
-    @Transactional
     public void insert1() {
         User user = new User("insert1", "0", "insert1", "insert1", "0", new Date());
         boolean insertResult = userService.save(user);
         logger.info("insert1 result = {}", insertResult);
-        insert2();
-//        throw new RuntimeException();
+        userService.insertUser();
+//        insert2();
+        throw new RuntimeException();
     }
 
     @Override
