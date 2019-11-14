@@ -33,4 +33,11 @@ public class ThymeleafController {
         mv.setViewName("/index.html");
         return mv;
     }
+
+    @GetMapping("/tables")
+    public ModelAndView tables(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("/tables.html");
+        return mv;
+    }
 }
