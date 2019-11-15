@@ -1,8 +1,6 @@
-package com.example.testdemo.serviceImpl;
+package com.example.testdemo.service;
 
 import com.example.testdemo.api.TransactionalTestService;
-import com.example.testdemo.api.UserService;
-import com.example.testdemo.dao.CityMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
