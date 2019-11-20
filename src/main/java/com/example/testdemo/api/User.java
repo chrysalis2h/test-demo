@@ -21,6 +21,13 @@ public class User {
     private Date createTime;
     private Date updateTime;
 
+    public User() {
+    }
+
+    public User(String userName) {
+        this.userName = userName;
+    }
+
     public User(String userName, String cardType, String cardNum, String phone, String flag, Date createTime) {
         this.userName = userName;
         this.cardType = cardType;
@@ -29,4 +36,5 @@ public class User {
         this.flag = flag;
         this.createTime = createTime;
     }
+
 }
