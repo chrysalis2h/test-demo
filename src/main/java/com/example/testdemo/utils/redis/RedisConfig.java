@@ -16,7 +16,7 @@ import java.net.UnknownHostException;
 /**
  *  * @ClassName: RedisConfig
  *  * @Description: RedisConfig
- *  * @Author: HeJin
+ *  * @Author: HJ
  *  * @Date: 2019\11\15 0015 11:22
  *  * @Version: v1.0 文件初始创建
  */

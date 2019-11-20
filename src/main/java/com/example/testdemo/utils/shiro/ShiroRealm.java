@@ -10,7 +10,7 @@ import org.apache.shiro.subject.PrincipalCollection;
 /**
  *  * @ClassName: ShiroRealm
  *  * @Description: ShiroRealm
- *  * @Author: HeJin
+ *  * @Author: HJ
  *  * @Date: 2019\11\14 0014 15:04
  *  * @Version: v1.0 文件初始创建
  */
