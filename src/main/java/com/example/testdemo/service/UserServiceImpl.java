@@ -21,7 +21,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     private UserMapper userMapper;
 
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public boolean insertUser(){
         User user = new User("insertUser", "0", "insertUser", "insertUser", "0", new Date());
         boolean insertResult = this.save(user);
