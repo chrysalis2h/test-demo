@@ -10,5 +10,5 @@ public interface CityService extends IService<City> {
 
     IPage<City> selectPage(Page<City> page, String countryCode);
 
-    List<City> getCityOverPopulation(Integer population);
+    List<City> getCityOverPopulation(Integer population, String id);
 }

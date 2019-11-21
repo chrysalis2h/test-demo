@@ -7,10 +7,7 @@ import com.example.testdemo.api.CityService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -71,9 +68,10 @@ public class TestDemoController {
         return cityPage;
     }
 
-    @GetMapping("/pop/{pop}")
-    public List<City> getCityOverPopulation(@PathVariable Integer pop) throws SQLException {
-        List<City> city = cityService.getCityOverPopulation(pop);
+    @GetMapping("/pop")
+    public List<City> getCityOverPopulation(@RequestParam(required = false) Integer pop,
+                                            @RequestParam(required = false) String id) throws SQLException {
+        List<City> city = cityService.getCityOverPopulation(pop, id);
         return city;
     }
 }

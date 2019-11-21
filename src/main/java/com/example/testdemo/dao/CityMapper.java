@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface CityMapper extends BaseMapper<City> {
 
-    List<City> getCityOverPopulation(Integer population);
+    List<City> getCityOverPopulation(Integer population, String id);
 }

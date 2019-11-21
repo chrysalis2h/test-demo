@@ -21,7 +21,13 @@
             <include refid="cityColumns" />
         from
             city
-        where
-            population > #{population}
+        <where>
+            <if test="population != null">
+                and population > #{population}
+            </if>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+        </where>
     </select>
 </mapper>

@@ -26,7 +26,7 @@ public class CityServiceImpl extends ServiceImpl<CityMapper, City> implements Ci
     }
 
     @Override
-    public List<City> getCityOverPopulation(Integer population) {
-        return cityMapper.getCityOverPopulation(population);
+    public List<City> getCityOverPopulation(Integer population, String id) {
+        return cityMapper.getCityOverPopulation(population, id);
     }
 }
