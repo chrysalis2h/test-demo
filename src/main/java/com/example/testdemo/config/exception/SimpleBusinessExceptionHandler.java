@@ -20,7 +20,7 @@ import java.io.PrintWriter;
  *  * @Date: 2019\12\18 0018 15:56
  *  * @Version: v1.0 文件初始创建
  */
-public class BusinessExceptionHandler extends SimpleMappingExceptionResolver {
+public class SimpleBusinessExceptionHandler extends SimpleMappingExceptionResolver {
 
     @Override
     protected ModelAndView doResolveException(HttpServletRequest request, HttpServletResponse response, Object handler,

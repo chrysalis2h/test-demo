@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.testdemo.api.City;
 import com.example.testdemo.api.CityService;
+import com.example.testdemo.config.exception.BusinessException;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,5 +75,13 @@ public class TestDemoController {
                                             @RequestParam(required = false) String id) throws SQLException {
         List<City> city = cityService.getCityOverPopulation(pop, id);
         return city;
+    }
+
+    @GetMapping("/exception")
+    public String testException(@RequestParam(required = false) String test) throws BusinessException {
+        if (StringUtils.isEmpty(test)) {
+            throw BusinessException.getException("测试异常");
+        }
+        return test;
     }
 }
