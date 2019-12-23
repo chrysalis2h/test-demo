@@ -44,7 +44,7 @@ public class SimpleBusinessExceptionHandler extends SimpleMappingExceptionResolv
                     errMsg = ex.getMessage();
                     logger.error(ex);
                 }
-                writer.write(JSON.toJSONString(new CommonResult<String>(-1, errMsg)));
+                writer.write(JSON.toJSONString(new CommonResult<String>().error(errMsg)));
                 writer.flush();
             } catch (IOException e) {
                 logger.error("", e);

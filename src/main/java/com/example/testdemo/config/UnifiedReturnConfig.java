@@ -34,7 +34,7 @@ public class UnifiedReturnConfig {
             if (body instanceof CommonResult) {
                 return body;
             }
-            return new CommonResult<Object>(body);
+            return new CommonResult<Object>().ok("请求成功", body);
         }
     }
 }

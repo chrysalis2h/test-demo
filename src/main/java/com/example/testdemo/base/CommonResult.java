@@ -11,20 +11,36 @@ import lombok.Data;
  */
 @Data
 public final class CommonResult<T> {
-    private int status = 1;
-    private String errorCode = "";
-    private String errorMsg = "";
+    private String code = "";
+    private String msg = "";
 
     private T resultBody;
 
     public CommonResult() {
+        code = "200";
     }
 
-    public CommonResult(T resultBody) {
-        this.resultBody = resultBody;
+    public CommonResult ok(String msg){
+        return ok(msg, null);
     }
-    public CommonResult(int status, String errorMsg) {
-        this.status = status;
-        this.errorMsg = errorMsg;
+
+    public CommonResult ok(String msg, T resultBody){
+        this.msg = msg;
+        this.resultBody = resultBody;
+        return this;
+    }
+
+    public CommonResult error() {
+        return error("500", "未知异常，请联系管理员");
+    }
+
+    public CommonResult error(String msg) {
+        return error("500", msg);
+    }
+
+    public CommonResult error(String code, String msg) {
+        this.code = code;
+        this.msg = msg;
+        return this;
     }
 }
