@@ -18,7 +18,7 @@ import java.util.Arrays;
  *  * @Date: 2019\12\20 0020 15:18
  *  * @Version: v1.0 文件初始创建
  */
-public class SysLogBaseAspect {
+public class BaseLogAspect {
 
     // 调用hutool-log
     private static final Log logger = LogFactory.get();

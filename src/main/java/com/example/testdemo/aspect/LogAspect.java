@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
  */
 @Aspect
 @Component
-public class SysLogAspect extends SysLogBaseAspect {
+public class LogAspect extends BaseLogAspect {
 
     private static final Log logger = Log.get();
 
