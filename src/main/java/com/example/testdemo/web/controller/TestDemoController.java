@@ -16,7 +16,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("/test-demo")
@@ -74,6 +77,34 @@ public class TestDemoController {
     public List<City> getCityOverPopulation(@RequestParam(required = false) Integer pop,
                                             @RequestParam(required = false) String id) throws SQLException {
         List<City> city = cityService.getCityOverPopulation(pop, id);
+        Stream<List<Integer>> inputStream = Stream.of(
+                Arrays.asList(1),
+                Arrays.asList(2, 3),
+                Arrays.asList(4, 5, 6)
+        );
+        List<Integer> sss = inputStream.
+                flatMap((childList) -> childList.stream()).collect(Collectors.toList());
+        System.out.println(sss);
+
+        List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+        integers.stream().reduce(0, Integer::sum);
+
+        Integer result = city.stream().reduce(0, (a, b) -> {
+            return a + b.getPopulation();
+        }, (a, b) -> 0);
+        System.out.println(result);
+
+        Map<String, Integer> contrycodeAndPopulationMap = city.stream().reduce(new HashMap<String, Integer>(), (a, b) -> {
+            Integer bPop = a.get(b.getCountrycode());
+            if (bPop == null) {
+                bPop = b.getPopulation();
+            } else {
+                bPop = bPop + b.getPopulation();
+            }
+            a.put(b.getCountrycode(), bPop);
+            return a;
+        }, (a, b) -> null);
+        System.out.println(contrycodeAndPopulationMap);
         return city;
     }
 
