@@ -16,7 +16,8 @@ import java.lang.reflect.Method;
  *  * @Date: 2019\12\23 0023 10:22
  *  * @Version: v1.0 文件初始创建
  */
-@Aspect
+/** TODO: 这个东西没写完，有数据，但是返回为null */
+//@Aspect
 @Component
 public class LogAspectDemo {
 
