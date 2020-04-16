@@ -1,17 +1,10 @@
 package com.example.testdemo.utils.redis;
 
-import com.google.common.base.Charsets;
-import com.google.common.hash.BloomFilter;
-import com.google.common.hash.Funnel;
-import com.google.common.hash.Funnels;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.Arrays;
-import java.util.List;
 
 /**
  *  * @ClassName: BloomFilter
@@ -23,7 +16,7 @@ import java.util.List;
 @Slf4j
 public class BloomFilterUtil {
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         long expecteInsertions = 10000000;
         double fpp = 0.00001;
 
@@ -61,7 +54,7 @@ public class BloomFilterUtil {
             log.info("entity={}, containUserFlag={}", email.toString(), containUserFlag);
         }
 
-    }
+    }*/
 
     @Data
     @ToString
