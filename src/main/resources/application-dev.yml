@@ -51,7 +51,7 @@ spring:
 ###ThymeLeaf配置
   thymeleaf:
     #模板的模式，支持 HTML, XML TEXT JAVASCRIPT
-    mode: HTML5
+    mode: HTML
     #编码 可不用配置
     encoding: UTF-8
     #开发配置为false,避免修改模板还要重启服务器
@@ -76,6 +76,11 @@ spring:
         min-idle: 0
     timeout: 1000
   #redis end
+#  spring security 通过配置文件的方式
+#  security:
+#    user:
+#      name: admin
+#      password: 123456
 
 #########log4j(这里可以不做指定  除非自己重新命名)##########
 logging:

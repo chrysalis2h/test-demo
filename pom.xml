@@ -50,6 +50,7 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
 
+        <!--    shiro 相关    -->
         <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring -->
         <!--<dependency>
             <groupId>org.apache.shiro</groupId>
@@ -63,6 +64,12 @@
             <artifactId>shiro-redis</artifactId>
             <version>${shiro-redis.version}</version>
         </dependency>-->
+
+        <!--   spring security     -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
