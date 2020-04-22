@@ -77,10 +77,10 @@ spring:
     timeout: 1000
   #redis end
 #  spring security 通过配置文件的方式
-#  security:
-#    user:
-#      name: admin
-#      password: 123456
+  security:
+    user:
+      name: admin
+      password: 123456
 
 #########log4j(这里可以不做指定  除非自己重新命名)##########
 logging:
