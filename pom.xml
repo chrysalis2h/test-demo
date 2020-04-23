@@ -159,6 +159,8 @@
         </dependency>
 
         <!--  hutool工具类      -->
+
+        <!--    本地安装钉钉SDK    -->
         <dependency>
             <groupId>dingdingsdk</groupId>
             <artifactId>dingdingsdk</artifactId>
@@ -170,6 +172,12 @@
             <version>1.13</version>
         </dependency>
 
+        <!--    JWT    -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
     </dependencies>
 
     <profiles>
