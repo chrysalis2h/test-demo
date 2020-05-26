@@ -92,5 +92,11 @@ logging:
 mybatis-plus:
   mapper-locations: classpath:mapper/*Mapper.xml
 
+threadpool:
+  core-pool-size: 10
+  max-pool-size: 20
+  queue-capacity: 30
+  keep-alive-seconds: 300
+
 
 
