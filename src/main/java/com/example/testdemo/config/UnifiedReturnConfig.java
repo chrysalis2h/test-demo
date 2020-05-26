@@ -1,5 +1,6 @@
 package com.example.testdemo.config;
 
+import com.alibaba.fastjson.JSON;
 import com.example.testdemo.base.CommonResult;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.MethodParameter;
@@ -34,7 +35,13 @@ public class UnifiedReturnConfig {
             if (body instanceof CommonResult) {
                 return body;
             }
-            return new CommonResult<Object>().ok("请求成功", body);
+            CommonResult commonResult = new CommonResult<>().ok("请求成功", body);
+            System.out.println(body instanceof CommonResult);
+            //处理返回值是String的情况
+            if (body instanceof String) {
+                return JSON.toJSONString(commonResult);
+            }
+            return commonResult;
         }
     }
 }
