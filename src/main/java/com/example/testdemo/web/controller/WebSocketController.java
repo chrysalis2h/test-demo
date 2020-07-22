@@ -18,12 +18,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class WebSocketController {
 
     @GetMapping("/push")
-    public String connectWebScoket(String sid, String message) {
+    public Boolean connectWebScoket(String sid, String message) {
+        boolean result = false;
         try {
-            WebSocketServer.sendInfo(message, sid);
+            result = WebSocketServer.sendInfo(message, sid);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "success";
+        return result;
     }
 }

@@ -80,8 +80,9 @@ public class WebSocketServer {
         this.session.getBasicRemote().sendText(message);
     }
 
-    public static void sendInfo(String message, @PathParam("sid") String sid) throws IOException {
+    public static boolean sendInfo(String message, @PathParam("sid") String sid) throws IOException {
         log.info("推送消息到窗口" + sid + "，推送内容:" + message);
+        boolean result = false;
         for (WebSocketServer item : webSocketServerSet) {
             try {
                 //这里可以设定只推送给这个sid的，为null则全部推送
@@ -90,10 +91,12 @@ public class WebSocketServer {
                 } else if (item.sid.equals(sid)) {
                     item.sendMessage(message);
                 }
+                result = true;
             } catch (IOException e) {
                 continue;
             }
         }
+        return result;
     }
 
     public static synchronized int getOnlineCount() {
