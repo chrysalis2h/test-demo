@@ -38,7 +38,7 @@
 
 		<!-- 2. 指定采用何种方式，生成何种对象 -->
 		<!-- 生成领域模型（实体类）和查询对象，	在tragetProject目录下的targetPackage(demo.model)包中生成与数据表同名的领域模型 (Pet.java)， 生成名为PetExxapple.java的查询对象 -->
-		<javaModelGenerator targetPackage="com.example.testdemo.api"
+		<javaModelGenerator targetPackage="com.cycle.testdemo.api"
 							targetProject="./src/main/java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
@@ -54,7 +54,7 @@
 
 		<!--生成MyBatis的DAO接口，PetMapper.java -->
 		<!-- type表示javaClient的类型，支持XMLMAPPER:SQL映射文件+接口，ANNOTATEDMAPPER：SQLBuilder+注解+接口，MIXEDMAPPER：混合形式 -->
-		<javaClientGenerator type="XMLMAPPER" targetPackage="com.example.testdemo.dao"
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.cycle.testdemo.dao"
 							 targetProject="./src/main/java">
 			<property name="enableSubPackages" value="true" />
 			<!-- 指定父接口，一般不使用 -->

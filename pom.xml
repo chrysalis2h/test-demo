@@ -8,11 +8,11 @@
         <version>2.1.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
-    <artifactId>test-demo</artifactId>
+    <groupId>com.cycle</groupId>
+    <artifactId>rubbish-truck</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>test-demo</name>
-    <description>Demo project for Thread</description>
+    <name>rubbish-truck</name>
+    <description>Rubbish-Truck</description>
 
     <properties>
         <java.version>1.8</java.version>
