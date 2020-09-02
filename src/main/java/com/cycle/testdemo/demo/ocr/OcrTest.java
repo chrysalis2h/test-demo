@@ -1,7 +1,5 @@
 package com.cycle.testdemo.demo.ocr;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Pattern;
 
 /**
@@ -79,7 +77,59 @@ public class OcrTest {
         return content.trim();
     }
 
+    /**
+     * @Description: 车架号
+     * @Date: 2020\9\2 0002 15:10
+     * @Author: HJ
+     * @Return
+     * @Throws
+     */
+    public static String vinCode(String content) {
+        StringBuilder sb = new StringBuilder();
+        char[] vinCharArr = content.toCharArray();
+        int vinLenth = 0;
+        int matchLength = 17;
+        String reg = "[0-9A-Z]";
+        for (int i = 0; i < vinCharArr.length; i++) {
+            if (String.valueOf(vinCharArr[i]).equals(" ")) {
+                continue;
+            }
+            boolean rightVinChar = String.valueOf(vinCharArr[i]).matches(reg);
+            if (rightVinChar && vinLenth < matchLength) {
+                vinLenth++;
+                sb.append(vinCharArr[i]);
+            } else if (vinLenth < matchLength) {
+                vinLenth = 0;
+                sb.delete(0, sb.length());
+            }
+        }
+        content = sb.toString();
+        return content.trim();
+    }
+
+    /**
+     * @Description: 购车发票-客户姓名
+     * @Date: 2020\9\2 0002 16:12
+     * @Author: HJ
+     * @Return
+     * @Throws
+     */
+    public static String invoiceCustName(String content) {
+        String matchPhrase = "";
+        if (content.contains("姓名")) {
+            matchPhrase = "姓名";
+        } else if (content.contains("名称")) {
+            matchPhrase = "名称";
+        }
+        int matchIndex = content.indexOf(matchPhrase);
+        content = content.substring(matchIndex, matchIndex + 8);
+        int matchIndexStart = content.indexOf(" ");
+        int matchIndexEnd = content.lastIndexOf(" ");
+        content = content.substring(matchIndexStart, matchIndexEnd);
+        return content.trim();
+    }
+
     public static void main(String[] args) {
-        System.out.println(invoiceNumber("及示代码1440519Z410U 发票号码 00690569"));
+        System.out.println(invoiceCustName("购买方名称及 邓派 身份证号码/ 纳 252725177111122225 组织机构代码"));
     }
 }
