@@ -1,15 +1,13 @@
-package com.cycle.testdemo.utils;
-
-import java.lang.reflect.Method;
+package com.cycle.testdemo.test.mybatis;
 
 /**
- *  * @ClassName: TestDemo
- *  * @Description: TestDemo
- *  * @Author: HeJin
- *  * @Date: 2019\12\18 0018 14:56
- *  * @Version: v1.0 文件初始创建
+ * @Description: 测试org/apache/ibatis/logging/LogFactory.java
+ * @Date: 2020\10\26 0026 14:50
+ * @Author: HJ
+ * @Return 
+ * @Throws 
  */
-public class TestDemo {
+public class LogFactoryTest {
     private static String logConstructor;
     static {
         //这边乍一看以为开了几个并行的线程去决定使用哪个具体框架的logging，其实不然
