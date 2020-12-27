@@ -1,7 +1,5 @@
 package com.cycle.testdemo.demo.DesignPatterns.strategy;
 
-import com.cycle.testdemo.api.designpattern.strategy.ContextOfStrategy;
-
 /**
  * @ClassName: StrategyMain
  * @Description: StrategyMain
@@ -9,11 +7,11 @@ import com.cycle.testdemo.api.designpattern.strategy.ContextOfStrategy;
  * @Date: 2020\12\3 0003 15:44
  * @Version: v1.0 文件初始创建
  */
-public class StrategyMain {
+public class StrategyPattern {
 
     public static void main(String[] args) {
 
-        ContextOfStrategy strategy = new ContextOfStrategy();
+        StrategyContext strategy = new StrategyContext();
         ConcreteStrategyAImpl strategyA = new ConcreteStrategyAImpl();
 
         strategy.setBaseThirdInterfaceStrategy(strategyA);
