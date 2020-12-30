@@ -1,7 +1,6 @@
-package com.cycle.testdemo.api.designpattern.strategy;
+package com.cycle.testdemo.demo.DesignPatterns.strategy;
 
 import com.alibaba.fastjson.JSONObject;
-import com.cycle.testdemo.demo.DesignPatterns.strategy.BaseThirdInterfaceStrategy;
 
 /**
  * @ClassName: ContextOfStrategy
@@ -10,7 +9,7 @@ import com.cycle.testdemo.demo.DesignPatterns.strategy.BaseThirdInterfaceStrateg
  * @Date: 2020\12\3 0003 15:45
  * @Version: v1.0 文件初始创建
  */
-public class ContextOfStrategy {
+public class StrategyContext {
 
     private BaseThirdInterfaceStrategy baseThirdInterfaceStrategy;
 
