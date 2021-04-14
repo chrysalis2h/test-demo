@@ -6,10 +6,10 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @SpringBootApplication
 @ServletComponentScan(basePackages = "com.cycle.rubbish.web.servlet")
-public class TestDemoApplication {
+public class RubbishTruckApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TestDemoApplication.class, args);
+        SpringApplication.run(RubbishTruckApplication.class, args);
     }
 
 }
