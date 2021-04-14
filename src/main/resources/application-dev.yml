@@ -98,5 +98,7 @@ threadpool:
   queue-capacity: 30
   keep-alive-seconds: 300
 
-
+test-annotation:
+  location: QingDao
+  food: beer
 
