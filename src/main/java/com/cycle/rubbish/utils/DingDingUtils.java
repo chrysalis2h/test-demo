@@ -1,10 +1,6 @@
 package com.cycle.rubbish.utils;
 
 import com.alibaba.fastjson.JSONObject;
-import com.dingtalk.api.DefaultDingTalkClient;
-import com.dingtalk.api.DingTalkClient;
-import com.dingtalk.api.request.OapiRobotSendRequest;
-import com.dingtalk.api.response.OapiRobotSendResponse;
 import org.apache.commons.codec.binary.Base64;
 
 import javax.crypto.Mac;
@@ -25,7 +21,7 @@ public class DingDingUtils {
     private static final String url = "https://oapi.dingtalk.com/robot/send?access_token=xxxx";
     private static final String secret = "xxxx";
 
-    public static void main(String[] args) throws Exception {
+    /*public static void main(String[] args) throws Exception {
         List<String> atList = Arrays.asList("手机号码");
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("content", "今天加班");
@@ -112,5 +108,5 @@ public class DingDingUtils {
                 "> ###### 10点20分发布 [天气](http://www.thinkpage.cn/) \n");
         request.setMarkdown(markdown);
         return request;
-    }
+    }*/
 }
